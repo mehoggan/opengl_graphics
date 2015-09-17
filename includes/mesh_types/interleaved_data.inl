@@ -40,7 +40,7 @@ namespace opengl_graphics // 2 attributes
     <
       T1, T2, nat, nat, nat, nat, nat, nat, nat, nat
     >::collection_type data, size_t attribute_count) :
-    _data(std::move(data)),
+    _data(data),
     _attribute_count(attribute_count)
   {}
 
@@ -67,7 +67,7 @@ namespace opengl_graphics // 2 attributes
     T1, T2, nat, nat, nat, nat, nat, nat, nat, nat
   >::operator=(interleaved_data<T1, T2> rhs)
   {
-    _data = std::move(rhs._data);
+    _data = rhs._data;
     _attribute_count = rhs._attribute_count;
 
     return (*this);
@@ -142,7 +142,7 @@ namespace opengl_graphics // 3 attributes
       T1, T2, T3, nat, nat, nat, nat, nat, nat, nat
     >::collection_type data,
     size_t attribute_count) :
-    _data(std::move(data)),
+    _data(data),
     _attribute_count(attribute_count)
   {}
 
@@ -169,7 +169,7 @@ namespace opengl_graphics // 3 attributes
     T1, T2, T3, nat, nat, nat, nat, nat, nat, nat
   >::operator=(interleaved_data<T1, T2, T3> rhs)
   {
-    _data = std::move(rhs._data);
+    _data = rhs._data;
     _attribute_count = rhs._attribute_count;
 
     return (*this);
@@ -244,7 +244,7 @@ namespace opengl_graphics // 4 attributes
       T1, T2, T3, T4, nat, nat, nat, nat, nat, nat
     >::collection_type data,
     size_t attribute_count) :
-    _data(std::move(data)),
+    _data(data),
     _attribute_count(attribute_count)
   {}
 
@@ -271,7 +271,7 @@ namespace opengl_graphics // 4 attributes
     T1, T2, T3, T4, nat, nat, nat, nat, nat, nat
   >::operator=(interleaved_data<T1, T2, T3, T4> rhs)
   {
-    _data = std::move(rhs._data);
+    _data = rhs._data;
     _attribute_count = rhs._attribute_count;
 
     return (*this);
@@ -348,7 +348,7 @@ namespace opengl_graphics // 5 attributes
       T1, T2, T3, T4, T5, nat, nat, nat, nat, nat
     >::collection_type data,
     size_t attribute_count) :
-    _data(std::move(data)),
+    _data(data),
     _attribute_count(attribute_count)
   {}
 
@@ -375,7 +375,7 @@ namespace opengl_graphics // 5 attributes
     T1, T2, T3, T4, T5, nat, nat, nat, nat, nat
   >::operator=(interleaved_data<T1, T2, T3, T4, T5> rhs)
   {
-    _data = std::move(rhs._data);
+    _data = rhs._data;
     _attribute_count = rhs._attribute_count;
 
     return (*this);
@@ -454,7 +454,7 @@ namespace opengl_graphics // 6 attributes
       T1, T2, T3, T4, T5, T6, nat, nat, nat, nat
     >::collection_type data,
     size_t attribute_count) :
-    _data(std::move(data)),
+    _data(data),
     _attribute_count(attribute_count)
   {}
 
@@ -483,7 +483,7 @@ namespace opengl_graphics // 6 attributes
     T1, T2, T3, T4, T5, T6, nat, nat, nat, nat
   >::operator=(interleaved_data<T1, T2, T3, T4, T5, T6> rhs)
   {
-    _data = std::move(rhs._data);
+    _data = rhs._data;
     _attribute_count = rhs._attribute_count;
 
     return (*this);
@@ -565,7 +565,7 @@ namespace opengl_graphics // 7 attributes
       T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
     >::collection_type data,
     size_t attribute_count) :
-    _data(std::move(data)),
+    _data(data),
     _attribute_count(attribute_count)
   {}
 
@@ -594,7 +594,7 @@ namespace opengl_graphics // 7 attributes
     T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
   >::operator=(interleaved_data<T1, T2, T3, T4, T5, T6, T7> rhs)
   {
-    _data = std::move(rhs._data);
+    _data = rhs._data;
     _attribute_count = rhs._attribute_count;
 
     return (*this);
@@ -687,7 +687,7 @@ namespace opengl_graphics // 8 attributes
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
   >::operator=(interleaved_data<T1, T2, T3, T4, T5, T6, T7, T8> rhs)
   {
-    _data = std::move(rhs._data);
+    _data = rhs._data;
     _attribute_count = rhs._attribute_count;
 
     return (*this);
@@ -707,7 +707,7 @@ namespace opengl_graphics // 8 attributes
     <
       T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
     >::collection_type data, size_t attribute_count) :
-    _data(std::move(data)),
+    _data(data),
     _attribute_count(attribute_count)
   {}
 
@@ -785,7 +785,7 @@ namespace opengl_graphics // 9 attributes
     <
       T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
     >::collection_type data, size_t attribute_count) :
-    _data(std::move(data)),
+    _data(data),
     _attribute_count(attribute_count)
   {}
 
@@ -814,7 +814,7 @@ namespace opengl_graphics // 9 attributes
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
   >::operator=(interleaved_data<T1, T2, T3, T4, T5, T6, T7, T8, T9> rhs)
   {
-    _data = std::move(rhs._data);
+    _data = rhs._data;
     _attribute_count = rhs._attribute_count;
 
     return (*this);

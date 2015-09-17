@@ -31,3 +31,10 @@
 */build/m4/lt~obsolete.m4
 */build/missing
 */build/stamp-h1
+*/Debug/*
+*/Release/*
+*.sdf
+*.sln
+*.suo
+*.a*
+*.la*
