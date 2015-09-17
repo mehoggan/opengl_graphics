@@ -28,9 +28,8 @@
 #include "mesh_types/datums/interleaved_datum_9d.h"
 #include "mesh_types/interleaved_traits.h"
 #include "core/platform.h"
+#include "ref_count/shared_array/shared_array.h"
 #include "utils/utils.h"
-
-#include <memory>
 
 namespace opengl_graphics
 {
@@ -53,7 +52,7 @@ namespace opengl_graphics // 2 attributes
   {
   public:
     typedef interleaved_datum_2d<T1, T2> datum_type;
-    typedef std::unique_ptr<datum_type[]> collection_type;
+    typedef shared_array<datum_type> collection_type;
 
     typedef msvc_typename interleaved_traits
     <
@@ -88,7 +87,7 @@ namespace opengl_graphics // 3 attributes
   {
   public:
     typedef interleaved_datum_3d<T1, T2, T3> datum_type;
-    typedef std::unique_ptr<datum_type[]> collection_type;
+    typedef shared_array<datum_type> collection_type;
 
     typedef msvc_typename interleaved_traits
     <
@@ -123,7 +122,7 @@ namespace opengl_graphics // 4 attributes
   {
   public:
     typedef interleaved_datum_4d<T1, T2, T3, T4> datum_type;
-    typedef std::unique_ptr<datum_type[]> collection_type;
+    typedef shared_array<datum_type> collection_type;
 
     typedef msvc_typename interleaved_traits
     <
@@ -158,7 +157,7 @@ namespace opengl_graphics // 5 attributes
   {
   public:
     typedef interleaved_datum_5d<T1, T2, T3, T4, T5> datum_type;
-    typedef std::unique_ptr<datum_type[]> collection_type;
+    typedef shared_array<datum_type> collection_type;
 
     typedef msvc_typename interleaved_traits
     <
@@ -194,7 +193,7 @@ namespace opengl_graphics // 6 attributes
   {
   public:
     typedef interleaved_datum_6d<T1, T2, T3, T4, T5, T6> datum_type;
-    typedef std::unique_ptr<datum_type[]> collection_type;
+    typedef shared_array<datum_type> collection_type;
 
     typedef msvc_typename interleaved_traits
     <
@@ -230,7 +229,7 @@ namespace opengl_graphics // 7 attributes
   {
   public:
     typedef interleaved_datum_7d<T1, T2, T3, T4, T5, T6, T7> datum_type;
-    typedef std::unique_ptr<datum_type[]> collection_type;
+    typedef shared_array<datum_type> collection_type;
 
     typedef msvc_typename interleaved_traits
     <
@@ -266,7 +265,7 @@ namespace opengl_graphics // 8 attributes
   {
   public:
     typedef interleaved_datum_8d<T1, T2, T3, T4, T5, T6, T7, T8> datum_type;
-    typedef std::unique_ptr<datum_type[]> collection_type;
+    typedef shared_array<datum_type> collection_type;
 
     typedef msvc_typename interleaved_traits
     <
@@ -302,7 +301,7 @@ namespace opengl_graphics // 9 attributes
   {
   public:
     typedef interleaved_datum_9d<T1, T2, T3, T4, T5, T6, T7, T8, T9> datum_type;
-    typedef std::unique_ptr<datum_type[]> collection_type;
+    typedef shared_array<datum_type> collection_type;
 
     typedef msvc_typename interleaved_traits
     <

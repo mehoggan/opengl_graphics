@@ -14,6 +14,7 @@
   #define __OPENGL_CORE_MACOSX__ 1
   #define msvc_typename
 #elif defined(_WIN16) || defined(_WIN32) || defined(_WIN64)
+  #include <Windows.h>
   #define __OPENGL_CORE_WINDOWS__ 1
   #define msvc_typename typename
   #if defined(_WIN16)

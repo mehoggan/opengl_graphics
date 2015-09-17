@@ -1,5 +1,6 @@
 #include "test_base.h"
 #include "test_mesh_types.h"
+#include "test_ref_counted.h"
 
 #define _CRTDBG_MAP_ALLOC
 #include "core/memory_leaks.h"
@@ -11,8 +12,9 @@
 int main(int argc, char *argv[])
 {
   MEMORY_LEAK_DETECTION_START();
-  std::array<std::shared_ptr<test_base>, 1> tests = {
+  std::array<std::shared_ptr<test_base>, 2> tests = {
     std::shared_ptr<test_base>(new test_mesh_types()),
+    std::shared_ptr<test_base>(new test_ref_counted())
   };
 
   std::cout << "Going to run " << tests.size() << " tests." << std::endl;

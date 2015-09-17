@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="..\..\..\includes\mesh_types\batch_data.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\mesh_types\batch_traits.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\type_traits\dimension.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\mesh_types\interleaved_data.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\mesh_types\datums\interleaved_datum_2d.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\mesh_types\datums\interleaved_datum_3d.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\mesh_types\datums\interleaved_datum_4d.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\mesh_types\datums\interleaved_datum_5d.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\mesh_types\datums\interleaved_datum_6d.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\mesh_types\datums\interleaved_datum_7d.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\mesh_types\datums\interleaved_datum_8d.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\mesh_types\datums\interleaved_datum_9d.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\mesh_types\interleaved_traits.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\core\memory_leaks.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\utils\non_copyable.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\core\platform.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\type_traits\sizeof.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\utils\utils.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\ref_count\intrusive_ptr\intrusive_ptr.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\ref_count\intrusive_ptr\ref_counted_base.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\ref_count\shared_array\shared_array.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\ref_count\shared_array\shared_count.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\ref_count\utils\non_copyable.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\ref_count\utils\sp_counted_base.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\includes\mesh_types\batch_data.inl">
+      <Filter>includes</Filter>
+    </None>
+    <None Include="..\..\..\includes\mesh_types\interleaved_data.inl">
+      <Filter>includes</Filter>
+    </None>
+    <None Include="..\..\..\includes\mesh_types\datums\interleaved_datum_2d.inl">
+      <Filter>includes</Filter>
+    </None>
+    <None Include="..\..\..\includes\mesh_types\datums\interleaved_datum_3d.inl">
+      <Filter>includes</Filter>
+    </None>
+    <None Include="..\..\..\includes\mesh_types\datums\interleaved_datum_4d.inl">
+      <Filter>includes</Filter>
+    </None>
+    <None Include="..\..\..\includes\mesh_types\datums\interleaved_datum_5d.inl">
+      <Filter>includes</Filter>
+    </None>
+    <None Include="..\..\..\includes\mesh_types\datums\interleaved_datum_6d.inl">
+      <Filter>includes</Filter>
+    </None>
+    <None Include="..\..\..\includes\mesh_types\datums\interleaved_datum_7d.inl">
+      <Filter>includes</Filter>
+    </None>
+    <None Include="..\..\..\includes\mesh_types\datums\interleaved_datum_8d.inl">
+      <Filter>includes</Filter>
+    </None>
+    <None Include="..\..\..\includes\mesh_types\datums\interleaved_datum_9d.inl">
+      <Filter>includes</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="includes">
+      <UniqueIdentifier>{4c88246c-43a3-490d-9b0f-7b07e5c12435}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
