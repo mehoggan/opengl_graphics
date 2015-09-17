@@ -123,7 +123,7 @@ namespace internal
       t1_(other.t1_),
       t2_(other.t2_),
       t3_(other.t3_),
-      t3_(other.t4_)
+      t4_(other.t4_)
     {}
 
     pod_4 &operator=(pod_4 rhs)

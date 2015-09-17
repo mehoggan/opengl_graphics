@@ -40,7 +40,7 @@ namespace opengl_graphics // 1 attribute
     <
       T1, nat, nat, nat, nat, nat, nat, nat, nat, nat
     >::collection1_type data1, size_t attribute_count) :
-    _data1(std::move(*data1)),
+    _data1(data1),
     _attribute_count(attribute_count)
   {}
 
@@ -52,7 +52,7 @@ namespace opengl_graphics // 1 attribute
   <
     T1, nat, nat, nat, nat, nat, nat, nat, nat, nat
   >::batch_data(const batch_data<T1> &rhs) :
-    _data1(std::move(rhs._data1)),
+    _data1(rhs._data1),
     _attribute_count(rhs._attribute_count)
   { }
 
@@ -66,7 +66,7 @@ namespace opengl_graphics // 1 attribute
     T1, nat, nat, nat, nat, nat, nat, nat, nat, nat
   >::operator=(batch_data<T1> rhs)
   {
-    _data1 = std::move(rhs._data1);
+    _data1 = rhs._data1;
     _attribute_count = rhs._attribute_count;
 
     return (*this);
@@ -76,10 +76,10 @@ namespace opengl_graphics // 1 attribute
   <
     typename T1
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, nat, nat, nat, nat, nat, nat, nat, nat, nat
-  >::collection1_type &
+  >::collection1_type
   batch_data
   <
     T1, nat, nat, nat, nat, nat, nat, nat, nat, nat
@@ -145,8 +145,8 @@ namespace opengl_graphics // 2 attributes
       T1, T2, nat, nat, nat, nat, nat, nat, nat, nat
     >::collection2_type data2,
     size_t attribute_count) :
-    _data1(std::move(data1)),
-    _data2(std::move(data2)),
+    _data1(data1),
+    _data2(data2),
     _attribute_count(attribute_count)
   {}
 
@@ -158,8 +158,8 @@ namespace opengl_graphics // 2 attributes
   <
     T1, T2, nat, nat, nat, nat, nat, nat, nat, nat
   >::batch_data(const batch_data<T1, T2> &rhs) :
-    _data1(std::move(rhs._data1)),
-    _data2(std::move(rhs._data2)),
+    _data1(rhs._data1),
+    _data2(rhs._data2),
     _attribute_count(rhs._attribute_count)
   {
   }
@@ -174,8 +174,8 @@ namespace opengl_graphics // 2 attributes
     T1, T2, nat, nat, nat, nat, nat, nat, nat, nat
   >::operator=(batch_data<T1, T2> rhs)
   {
-    _data1 = std::move(rhs._data1);
-    _data2 = std::move(rhs._data2);
+    _data1 = rhs._data1;
+    _data2 = rhs._data2;
     _attribute_count = rhs._attribute_count;
 
     return (*this);
@@ -185,10 +185,10 @@ namespace opengl_graphics // 2 attributes
   <
     typename T1, typename T2
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, nat, nat, nat, nat, nat, nat, nat, nat
-  >::collection1_type &
+  >::collection1_type
   batch_data
   <
     T1, T2, nat, nat, nat, nat, nat, nat, nat, nat
@@ -201,10 +201,10 @@ namespace opengl_graphics // 2 attributes
   <
     typename T1, typename T2
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, nat, nat, nat, nat, nat, nat, nat, nat
-  >::collection2_type &
+  >::collection2_type
   batch_data
   <
     T1, T2, nat, nat, nat, nat, nat, nat, nat, nat
@@ -287,9 +287,9 @@ namespace opengl_graphics // 3 attributes
       T1, T2, T3, nat, nat, nat, nat, nat, nat, nat
     >::collection3_type data3,
     size_t attribute_count) :
-    _data1(std::move(data1)),
-    _data2(std::move(data2)),
-    _data3(std::move(data3)),
+    _data1(data1),
+    _data2(data2),
+    _data3(data3),
     _attribute_count(attribute_count)
   {}
 
@@ -301,9 +301,9 @@ namespace opengl_graphics // 3 attributes
   <
     T1, T2, T3, nat, nat, nat, nat, nat, nat, nat
   >::batch_data(const batch_data<T1, T2, T3> &rhs) :
-    _data1(std::move(rhs._data1)),
-    _data2(std::move(rhs._data2)),
-    _data3(std::move(rhs._data3)),
+    _data1(rhs._data1),
+    _data2(rhs._data2),
+    _data3(rhs._data3),
     _attribute_count(rhs._attribute_count)
   {
   }
@@ -318,9 +318,9 @@ namespace opengl_graphics // 3 attributes
     T1, T2, T3, nat, nat, nat, nat, nat, nat, nat
   >::operator=(batch_data<T1, T2, T3> rhs)
   {
-    _data1 = std::move(rhs._data1);
-    _data2 = std::move(rhs._data2);
-    _data3 = std::move(rhs._data3);
+    _data1 = rhs._data1;
+    _data2 = rhs._data2;
+    _data3 = rhs._data3;
     _attribute_count = rhs._attribute_count;
 
     return (*this);
@@ -330,10 +330,10 @@ namespace opengl_graphics // 3 attributes
   <
     typename T1, typename T2, typename T3
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, nat, nat, nat, nat, nat, nat, nat
-  >::collection1_type &
+  >::collection1_type
   batch_data
   <
     T1, T2, T3, nat, nat, nat, nat, nat, nat, nat
@@ -346,10 +346,10 @@ namespace opengl_graphics // 3 attributes
   <
     typename T1, typename T2, typename T3
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, nat, nat, nat, nat, nat, nat, nat
-  >::collection2_type &
+  >::collection2_type
   batch_data
   <
     T1, T2, T3, nat, nat, nat, nat, nat, nat, nat
@@ -362,10 +362,10 @@ namespace opengl_graphics // 3 attributes
   <
     typename T1, typename T2, typename T3
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, nat, nat, nat, nat, nat, nat, nat
-  >::collection3_type &
+  >::collection3_type
   batch_data
   <
     T1, T2, T3, nat, nat, nat, nat, nat, nat, nat
@@ -465,10 +465,10 @@ namespace opengl_graphics // 4 attributes
       T1, T2, T3, T4, nat, nat, nat, nat, nat, nat
     >::collection4_type data4,
     size_t attribute_count) :
-    _data1(std::move(data1)),
-    _data2(std::move(data2)),
-    _data3(std::move(data3)),
-    _data4(std::move(data4)),
+    _data1(data1),
+    _data2(data2),
+    _data3(data3),
+    _data4(data4),
     _attribute_count(attribute_count)
   {}
 
@@ -480,10 +480,10 @@ namespace opengl_graphics // 4 attributes
   <
     T1, T2, T3, T4, nat, nat, nat, nat, nat, nat
   >::batch_data(const batch_data<T1, T2, T3, T4> &rhs) :
-    _data1(std::move(rhs._data1)),
-    _data2(std::move(rhs._data2)),
-    _data3(std::move(rhs._data3)),
-    _data4(std::move(rhs._data4)),
+    _data1(rhs._data1),
+    _data2(rhs._data2),
+    _data3(rhs._data3),
+    _data4(rhs._data4),
     _attribute_count(rhs._attribute_count)
   {
   }
@@ -498,10 +498,10 @@ namespace opengl_graphics // 4 attributes
     T1, T2, T3, T4, nat, nat, nat, nat, nat, nat
   >::operator=(batch_data<T1, T2, T3, T4> rhs)
   {
-    _data1 = std::move(rhs._data1);
-    _data2 = std::move(rhs._data2);
-    _data3 = std::move(rhs._data3);
-    _data4 = std::move(rhs._data4);
+    _data1 = rhs._data1;
+    _data2 = rhs._data2;
+    _data3 = rhs._data3;
+    _data4 = rhs._data4;
     _attribute_count = rhs._attribute_count;
 
     return (*this);
@@ -511,10 +511,10 @@ namespace opengl_graphics // 4 attributes
   <
     typename T1, typename T2, typename T3, typename T4
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, nat, nat, nat, nat, nat, nat
-  >::collection1_type &
+  >::collection1_type
   batch_data
   <
     T1, T2, T3, T4, nat, nat, nat, nat, nat, nat
@@ -527,10 +527,10 @@ namespace opengl_graphics // 4 attributes
   <
     typename T1, typename T2, typename T3, typename T4
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, nat, nat, nat, nat, nat, nat
-  >::collection2_type &
+  >::collection2_type
   batch_data
   <
     T1, T2, T3, T4, nat, nat, nat, nat, nat, nat
@@ -543,10 +543,10 @@ namespace opengl_graphics // 4 attributes
   <
     typename T1, typename T2, typename T3, typename T4
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, nat, nat, nat, nat, nat, nat
-  >::collection3_type &
+  >::collection3_type
   batch_data
   <
     T1, T2, T3, T4, nat, nat, nat, nat, nat, nat
@@ -559,10 +559,10 @@ namespace opengl_graphics // 4 attributes
   <
     typename T1, typename T2, typename T3, typename T4
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, nat, nat, nat, nat, nat, nat
-  >::collection4_type &
+  >::collection4_type
   batch_data
   <
     T1, T2, T3, T4, nat, nat, nat, nat, nat, nat
@@ -679,11 +679,11 @@ namespace opengl_graphics // 5 attributes
       T1, T2, T3, T4, T5, nat, nat, nat, nat, nat
     >::collection5_type data5,
     size_t attribute_count) :
-    _data1(std::move(data1)),
-    _data2(std::move(data2)),
-    _data3(std::move(data3)),
-    _data4(std::move(data4)),
-    _data5(std::move(data5)),
+    _data1(data1),
+    _data2(data2),
+    _data3(data3),
+    _data4(data4),
+    _data5(data5),
     _attribute_count(attribute_count)
   {}
 
@@ -695,11 +695,11 @@ namespace opengl_graphics // 5 attributes
   <
     T1, T2, T3, T4, T5, nat, nat, nat, nat, nat
   >::batch_data(const batch_data<T1, T2, T3, T4, T5> &rhs) :
-    _data1(std::move(rhs._data1)),
-    _data2(std::move(rhs._data2)),
-    _data3(std::move(rhs._data3)),
-    _data4(std::move(rhs._data4)),
-    _data5(std::move(rhs._data5)),
+    _data1(rhs._data1),
+    _data2(rhs._data2),
+    _data3(rhs._data3),
+    _data4(rhs._data4),
+    _data5(rhs._data5),
     _attribute_count(rhs._attribute_count)
   {
   }
@@ -714,11 +714,11 @@ namespace opengl_graphics // 5 attributes
     T1, T2, T3, T4, T5, nat, nat, nat, nat, nat
   >::operator=(batch_data<T1, T2, T3, T4, T5> rhs)
   {
-    _data1 = std::move(rhs._data1);
-    _data2 = std::move(rhs._data2);
-    _data3 = std::move(rhs._data3);
-    _data4 = std::move(rhs._data4);
-    _data5 = std::move(rhs._data5);
+    _data1 = rhs._data1;
+    _data2 = rhs._data2;
+    _data3 = rhs._data3;
+    _data4 = rhs._data4;
+    _data5 = rhs._data5;
     _attribute_count = rhs._attribute_count;
 
     return (*this);
@@ -728,10 +728,10 @@ namespace opengl_graphics // 5 attributes
   <
     typename T1, typename T2, typename T3, typename T4, typename T5
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, nat, nat, nat, nat, nat
-  >::collection1_type &
+  >::collection1_type
   batch_data
   <
     T1, T2, T3, T4, T5, nat, nat, nat, nat, nat
@@ -744,10 +744,10 @@ namespace opengl_graphics // 5 attributes
   <
     typename T1, typename T2, typename T3, typename T4, typename T5
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, nat, nat, nat, nat, nat
-  >::collection2_type &
+  >::collection2_type
   batch_data
   <
     T1, T2, T3, T4, T5, nat, nat, nat, nat, nat
@@ -760,10 +760,10 @@ namespace opengl_graphics // 5 attributes
   <
     typename T1, typename T2, typename T3, typename T4, typename T5
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, nat, nat, nat, nat, nat
-  >::collection3_type &
+  >::collection3_type
   batch_data
   <
     T1, T2, T3, T4, T5, nat, nat, nat, nat, nat
@@ -776,10 +776,10 @@ namespace opengl_graphics // 5 attributes
   <
     typename T1, typename T2, typename T3, typename T4, typename T5
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, nat, nat, nat, nat, nat
-  >::collection4_type &
+  >::collection4_type
   batch_data
   <
     T1, T2, T3, T4, T5, nat, nat, nat, nat, nat
@@ -792,10 +792,10 @@ namespace opengl_graphics // 5 attributes
   <
     typename T1, typename T2, typename T3, typename T4, typename T5
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, nat, nat, nat, nat, nat
-  >::collection5_type &
+  >::collection5_type
   batch_data
   <
     T1, T2, T3, T4, T5, nat, nat, nat, nat, nat
@@ -931,12 +931,12 @@ namespace opengl_graphics // 6 attributes
       T1, T2, T3, T4, T5, T6, nat, nat, nat, nat
     >::collection6_type data6,
     size_t attribute_count) :
-    _data1(std::move(data1)),
-    _data2(std::move(data2)),
-    _data3(std::move(data3)),
-    _data4(std::move(data4)),
-    _data5(std::move(data5)),
-    _data6(std::move(data6)),
+    _data1(data1),
+    _data2(data2),
+    _data3(data3),
+    _data4(data4),
+    _data5(data5),
+    _data6(data6),
     _attribute_count(attribute_count)
   {}
 
@@ -949,12 +949,12 @@ namespace opengl_graphics // 6 attributes
   <
     T1, T2, T3, T4, T5, T6, nat, nat, nat, nat
   >::batch_data(const batch_data<T1, T2, T3, T4, T5, T6> &rhs) :
-    _data1(std::move(rhs._data1)),
-    _data2(std::move(rhs._data2)),
-    _data3(std::move(rhs._data3)),
-    _data4(std::move(rhs._data4)),
-    _data5(std::move(rhs._data5)),
-    _data6(std::move(rhs._data6)),
+    _data1(rhs._data1),
+    _data2(rhs._data2),
+    _data3(rhs._data3),
+    _data4(rhs._data4),
+    _data5(rhs._data5),
+    _data6(rhs._data6),
     _attribute_count(rhs._attribute_count)
   {
   }
@@ -970,12 +970,12 @@ namespace opengl_graphics // 6 attributes
     T1, T2, T3, T4, T5, T6, nat, nat, nat, nat
   >::operator=(batch_data<T1, T2, T3, T4, T5, T6> rhs)
   {
-    _data1 = std::move(rhs._data1);
-    _data2 = std::move(rhs._data2);
-    _data3 = std::move(rhs._data3);
-    _data4 = std::move(rhs._data4);
-    _data5 = std::move(rhs._data5);
-    _data6 = std::move(rhs._data6);
+    _data1 = rhs._data1;
+    _data2 = rhs._data2;
+    _data3 = rhs._data3;
+    _data4 = rhs._data4;
+    _data5 = rhs._data5;
+    _data6 = rhs._data6;
     _attribute_count = rhs._attribute_count;
 
     return (*this);
@@ -986,10 +986,10 @@ namespace opengl_graphics // 6 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, nat, nat, nat, nat
-  >::collection1_type &
+  >::collection1_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, nat, nat, nat, nat
@@ -1003,10 +1003,10 @@ namespace opengl_graphics // 6 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, nat, nat, nat, nat
-  >::collection2_type &
+  >::collection2_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, nat, nat, nat, nat
@@ -1020,10 +1020,10 @@ namespace opengl_graphics // 6 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, nat, nat, nat, nat
-  >::collection3_type &
+  >::collection3_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, nat, nat, nat, nat
@@ -1037,10 +1037,10 @@ namespace opengl_graphics // 6 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, nat, nat, nat, nat
-  >::collection4_type &
+  >::collection4_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, nat, nat, nat, nat
@@ -1054,10 +1054,10 @@ namespace opengl_graphics // 6 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, nat, nat, nat, nat
-  >::collection5_type &
+  >::collection5_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, nat, nat, nat, nat
@@ -1071,10 +1071,10 @@ namespace opengl_graphics // 6 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, nat, nat, nat, nat
-  >::collection6_type &
+  >::collection6_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, nat, nat, nat, nat
@@ -1234,13 +1234,13 @@ namespace opengl_graphics // 7 attributes
       T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
     >::collection7_type data7,
     size_t attribute_count) :
-    _data1(std::move(data1)),
-    _data2(std::move(data2)),
-    _data3(std::move(data3)),
-    _data4(std::move(data4)),
-    _data5(std::move(data5)),
-    _data6(std::move(data6)),
-    _data7(std::move(data7)),
+    _data1(data1),
+    _data2(data2),
+    _data3(data3),
+    _data4(data4),
+    _data5(data5),
+    _data6(data6),
+    _data7(data7),
     _attribute_count(attribute_count)
   {}
 
@@ -1253,13 +1253,13 @@ namespace opengl_graphics // 7 attributes
   <
     T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
   >::batch_data(const batch_data<T1, T2, T3, T4, T5, T6, T7> &rhs) :
-    _data1(std::move(rhs._data1)),
-    _data2(std::move(rhs._data2)),
-    _data3(std::move(rhs._data3)),
-    _data4(std::move(rhs._data4)),
-    _data5(std::move(rhs._data5)),
-    _data6(std::move(rhs._data6)),
-    _data7(std::move(rhs._data7)),
+    _data1(rhs._data1),
+    _data2(rhs._data2),
+    _data3(rhs._data3),
+    _data4(rhs._data4),
+    _data5(rhs._data5),
+    _data6(rhs._data6),
+    _data7(rhs._data7),
     _attribute_count(rhs._attribute_count)
   {
   }
@@ -1275,13 +1275,13 @@ namespace opengl_graphics // 7 attributes
     T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
   >::operator=(batch_data<T1, T2, T3, T4, T5, T6, T7> rhs)
   {
-    _data1 = std::move(rhs._data1);
-    _data2 = std::move(rhs._data2);
-    _data3 = std::move(rhs._data3);
-    _data4 = std::move(rhs._data4);
-    _data5 = std::move(rhs._data5);
-    _data6 = std::move(rhs._data6);
-    _data7 = std::move(rhs._data7);
+    _data1 = rhs._data1;
+    _data2 = rhs._data2;
+    _data3 = rhs._data3;
+    _data4 = rhs._data4;
+    _data5 = rhs._data5;
+    _data6 = rhs._data6;
+    _data7 = rhs._data7;
     _attribute_count = rhs._attribute_count;
 
     return (*this);
@@ -1292,10 +1292,10 @@ namespace opengl_graphics // 7 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
-  >::collection1_type &
+  >::collection1_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
@@ -1309,10 +1309,10 @@ namespace opengl_graphics // 7 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
-  >::collection2_type &
+  >::collection2_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
@@ -1326,10 +1326,10 @@ namespace opengl_graphics // 7 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
-  >::collection3_type &
+  >::collection3_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
@@ -1343,10 +1343,10 @@ namespace opengl_graphics // 7 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
-  >::collection4_type &
+  >::collection4_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
@@ -1360,10 +1360,10 @@ namespace opengl_graphics // 7 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
-  >::collection5_type &
+  >::collection5_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
@@ -1377,10 +1377,10 @@ namespace opengl_graphics // 7 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
-  >::collection6_type &
+  >::collection6_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
@@ -1394,10 +1394,10 @@ namespace opengl_graphics // 7 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
-  >::collection7_type &
+  >::collection7_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, nat, nat, nat
@@ -1575,14 +1575,14 @@ namespace opengl_graphics // 8 attributes
       T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
     >::collection8_type data8,
     size_t attribute_count) :
-    _data1(std::move(data1)),
-    _data2(std::move(data2)),
-    _data3(std::move(data3)),
-    _data4(std::move(data4)),
-    _data5(std::move(data5)),
-    _data6(std::move(data6)),
-    _data7(std::move(data7)),
-    _data8(std::move(data8)),
+    _data1(data1),
+    _data2(data2),
+    _data3(data3),
+    _data4(data4),
+    _data5(data5),
+    _data6(data6),
+    _data7(data7),
+    _data8(data8),
     _attribute_count(attribute_count)
   {}
 
@@ -1595,14 +1595,14 @@ namespace opengl_graphics // 8 attributes
   <
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
   >::batch_data(const batch_data<T1, T2, T3, T4, T5, T6, T7, T8> &rhs) :
-    _data1(std::move(rhs._data1)),
-    _data2(std::move(rhs._data2)),
-    _data3(std::move(rhs._data3)),
-    _data4(std::move(rhs._data4)),
-    _data5(std::move(rhs._data5)),
-    _data6(std::move(rhs._data6)),
-    _data7(std::move(rhs._data7)),
-    _data8(std::move(rhs._data8)),
+    _data1(rhs._data1),
+    _data2(rhs._data2),
+    _data3(rhs._data3),
+    _data4(rhs._data4),
+    _data5(rhs._data5),
+    _data6(rhs._data6),
+    _data7(rhs._data7),
+    _data8(rhs._data8),
     _attribute_count(rhs._attribute_count)
   {
   }
@@ -1618,14 +1618,14 @@ namespace opengl_graphics // 8 attributes
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
   >::operator=(batch_data<T1, T2, T3, T4, T5, T6, T7, T8> rhs)
   {
-    _data1 = std::move(rhs._data1);
-    _data2 = std::move(rhs._data2);
-    _data3 = std::move(rhs._data3);
-    _data4 = std::move(rhs._data4);
-    _data5 = std::move(rhs._data5);
-    _data6 = std::move(rhs._data6);
-    _data7 = std::move(rhs._data7);
-    _data8 = std::move(rhs._data8);
+    _data1 = rhs._data1;
+    _data2 = rhs._data2;
+    _data3 = rhs._data3;
+    _data4 = rhs._data4;
+    _data5 = rhs._data5;
+    _data6 = rhs._data6;
+    _data7 = rhs._data7;
+    _data8 = rhs._data8;
     _attribute_count = rhs._attribute_count;
 
     return (*this);
@@ -1636,10 +1636,10 @@ namespace opengl_graphics // 8 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
-  >::collection1_type &
+  >::collection1_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
@@ -1653,10 +1653,10 @@ namespace opengl_graphics // 8 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
-  >::collection2_type &
+  >::collection2_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
@@ -1670,10 +1670,10 @@ namespace opengl_graphics // 8 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
-  >::collection3_type &
+  >::collection3_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
@@ -1687,10 +1687,10 @@ namespace opengl_graphics // 8 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
-  >::collection4_type &
+  >::collection4_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
@@ -1704,10 +1704,10 @@ namespace opengl_graphics // 8 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
-  >::collection5_type &
+  >::collection5_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
@@ -1721,10 +1721,10 @@ namespace opengl_graphics // 8 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
-  >::collection6_type &
+  >::collection6_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
@@ -1738,10 +1738,10 @@ namespace opengl_graphics // 8 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
-  >::collection7_type &
+  >::collection7_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
@@ -1755,10 +1755,10 @@ namespace opengl_graphics // 8 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
-  >::collection8_type &
+  >::collection8_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, nat, nat
@@ -1954,15 +1954,15 @@ namespace opengl_graphics // 9 attributes
       T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
     >::collection9_type data9,
     size_t attribute_count) :
-    _data1(std::move(data1)),
-    _data2(std::move(data2)),
-    _data3(std::move(data3)),
-    _data4(std::move(data4)),
-    _data5(std::move(data5)),
-    _data6(std::move(data6)),
-    _data7(std::move(data7)),
-    _data8(std::move(data8)),
-    _data9(std::move(data9)),
+    _data1(data1),
+    _data2(data2),
+    _data3(data3),
+    _data4(data4),
+    _data5(data5),
+    _data6(data6),
+    _data7(data7),
+    _data8(data8),
+    _data9(data9),
     _attribute_count(attribute_count)
   {}
 
@@ -1975,15 +1975,15 @@ namespace opengl_graphics // 9 attributes
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
   >::batch_data(const batch_data<T1, T2, T3, T4, T5, T6, T7, T8, T9> &rhs) :
-    _data1(std::move(rhs._data1)),
-    _data2(std::move(rhs._data2)),
-    _data3(std::move(rhs._data3)),
-    _data4(std::move(rhs._data4)),
-    _data5(std::move(rhs._data5)),
-    _data6(std::move(rhs._data6)),
-    _data7(std::move(rhs._data7)),
-    _data8(std::move(rhs._data8)),
-    _data9(std::move(rhs._data9)),
+    _data1(rhs._data1),
+    _data2(rhs._data2),
+    _data3(rhs._data3),
+    _data4(rhs._data4),
+    _data5(rhs._data5),
+    _data6(rhs._data6),
+    _data7(rhs._data7),
+    _data8(rhs._data8),
+    _data9(rhs._data9),
     _attribute_count(rhs._attribute_count)
   {
   }
@@ -1999,15 +1999,15 @@ namespace opengl_graphics // 9 attributes
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
   >::operator=(batch_data<T1, T2, T3, T4, T5, T6, T7, T8, T9> rhs)
   {
-    _data1 = std::move(rhs._data1);
-    _data2 = std::move(rhs._data2);
-    _data3 = std::move(rhs._data3);
-    _data4 = std::move(rhs._data4);
-    _data5 = std::move(rhs._data5);
-    _data6 = std::move(rhs._data6);
-    _data7 = std::move(rhs._data7);
-    _data8 = std::move(rhs._data8);
-    _data9 = std::move(rhs._data9);
+    _data1 = rhs._data1;
+    _data2 = rhs._data2;
+    _data3 = rhs._data3;
+    _data4 = rhs._data4;
+    _data5 = rhs._data5;
+    _data6 = rhs._data6;
+    _data7 = rhs._data7;
+    _data8 = rhs._data8;
+    _data9 = rhs._data9;
     _attribute_count = rhs._attribute_count;
 
     return (*this);
@@ -2018,10 +2018,10 @@ namespace opengl_graphics // 9 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8, typename T9
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
-  >::collection1_type &
+  >::collection1_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
@@ -2035,10 +2035,10 @@ namespace opengl_graphics // 9 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8, typename T9
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
-  >::collection2_type &
+  >::collection2_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
@@ -2052,10 +2052,10 @@ namespace opengl_graphics // 9 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8, typename T9
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
-  >::collection3_type &
+  >::collection3_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
@@ -2069,10 +2069,10 @@ namespace opengl_graphics // 9 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8, typename T9
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
-  >::collection4_type &
+  >::collection4_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
@@ -2086,10 +2086,10 @@ namespace opengl_graphics // 9 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8, typename T9
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
-  >::collection5_type &
+  >::collection5_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
@@ -2103,10 +2103,10 @@ namespace opengl_graphics // 9 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8, typename T9
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
-  >::collection6_type &
+  >::collection6_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
@@ -2120,10 +2120,10 @@ namespace opengl_graphics // 9 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8, typename T9
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
-  >::collection7_type &
+  >::collection7_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
@@ -2137,10 +2137,10 @@ namespace opengl_graphics // 9 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8, typename T9
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
-  >::collection8_type &
+  >::collection8_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
@@ -2154,10 +2154,10 @@ namespace opengl_graphics // 9 attributes
     typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8, typename T9
   >
-  const typename batch_data
+  typename batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat
-  >::collection9_type &
+  >::collection9_type
   batch_data
   <
     T1, T2, T3, T4, T5, T6, T7, T8, T9, nat

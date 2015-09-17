@@ -18,11 +18,10 @@
 #ifndef BATCH_DATA_H_INCLUDED
 #define BATCH_DATA_H_INCLUDED
 
+#include "ref_count/shared_array/shared_array.h"
+#include "mesh_types/batch_traits.h"
 #include "core/platform.h"
 #include "utils/utils.h"
-#include "mesh_types/batch_traits.h"
-
-#include <memory>
 
 namespace opengl_graphics
 {
@@ -45,7 +44,7 @@ namespace opengl_graphics
   {
   public:
     typedef T1 type1;
-    typedef std::unique_ptr<type1[]> collection1_type;
+    typedef shared_array<type1> collection1_type;
 
     typedef msvc_typename batch_traits
     <
@@ -66,7 +65,7 @@ namespace opengl_graphics
     batch_data(const batch_data &rhs);
     batch_data &operator=(batch_data rhs);
 
-    const collection1_type &get_data1() const;
+    collection1_type get_data1() const;
 
     size_t get_attribute_count() const;
     size_t get_bytecount_1() const;
@@ -83,9 +82,9 @@ namespace opengl_graphics
   {
   public:
     typedef T1 type1;
-    typedef std::unique_ptr<type1[]> collection1_type;
+    typedef shared_array<type1> collection1_type;
     typedef T2 type2;
-    typedef std::unique_ptr<type2[]> collection2_type;
+    typedef shared_array<type2> collection2_type;
 
     typedef batch_traits<T1, T2, nat, nat, nat, nat, nat, nat, nat>
       batch_traits_t;
@@ -106,8 +105,8 @@ namespace opengl_graphics
     batch_data(const batch_data &rhs);
     batch_data &operator=(batch_data rhs);
 
-    const collection1_type &get_data1() const;
-    const collection2_type &get_data2() const;
+    collection1_type get_data1() const;
+    collection2_type get_data2() const;
 
     size_t get_attribute_count() const;
     size_t get_bytecount_1() const;
@@ -125,11 +124,11 @@ namespace opengl_graphics
   {
   public:
     typedef T1 type1;
-    typedef std::unique_ptr<type1[]> collection1_type;
+    typedef shared_array<type1> collection1_type;
     typedef T2 type2;
-    typedef std::unique_ptr<type2[]> collection2_type;
+    typedef shared_array<type2> collection2_type;
     typedef T3 type3;
-    typedef std::unique_ptr<type3[]> collection3_type;
+    typedef shared_array<type3> collection3_type;
 
     typedef batch_traits<T1, T2, T3, nat, nat, nat, nat, nat, nat>
       batch_traits_t;
@@ -152,9 +151,9 @@ namespace opengl_graphics
     batch_data(const batch_data &rhs);
     batch_data &operator=(batch_data rhs);
 
-    const collection1_type &get_data1() const;
-    const collection2_type &get_data2() const;
-    const collection3_type &get_data3() const;
+    collection1_type get_data1() const;
+    collection2_type get_data2() const;
+    collection3_type get_data3() const;
 
     size_t get_attribute_count() const;
     size_t get_bytecount_1() const;
@@ -173,13 +172,13 @@ namespace opengl_graphics
   {
   public:
     typedef T1 type1;
-    typedef std::unique_ptr<type1[]> collection1_type;
+    typedef shared_array<type1> collection1_type;
     typedef T2 type2;
-    typedef std::unique_ptr<type2[]> collection2_type;
+    typedef shared_array<type2> collection2_type;
     typedef T3 type3;
-    typedef std::unique_ptr<type3[]> collection3_type;
+    typedef shared_array<type3> collection3_type;
     typedef T4 type4;
-    typedef std::unique_ptr<type4[]> collection4_type;
+    typedef shared_array<type4> collection4_type;
 
     typedef batch_traits<T1, T2, T3, T4, nat, nat, nat, nat, nat>
       batch_traits_t;
@@ -204,10 +203,10 @@ namespace opengl_graphics
     batch_data(const batch_data &rhs);
     batch_data &operator=(batch_data rhs);
 
-    const collection1_type &get_data1() const;
-    const collection2_type &get_data2() const;
-    const collection3_type &get_data3() const;
-    const collection4_type &get_data4() const;
+    collection1_type get_data1() const;
+    collection2_type get_data2() const;
+    collection3_type get_data3() const;
+    collection4_type get_data4() const;
 
     size_t get_attribute_count() const;
     size_t get_bytecount_1() const;
@@ -227,15 +226,15 @@ namespace opengl_graphics
   {
   public:
     typedef T1 type1;
-    typedef std::unique_ptr<type1[]> collection1_type;
+    typedef shared_array<type1> collection1_type;
     typedef T2 type2;
-    typedef std::unique_ptr<type2[]> collection2_type;
+    typedef shared_array<type2> collection2_type;
     typedef T3 type3;
-    typedef std::unique_ptr<type3[]> collection3_type;
+    typedef shared_array<type3> collection3_type;
     typedef T4 type4;
-    typedef std::unique_ptr<type4[]> collection4_type;
+    typedef shared_array<type4> collection4_type;
     typedef T5 type5;
-    typedef std::unique_ptr<type5[]> collection5_type;
+    typedef shared_array<type5> collection5_type;
 
     typedef batch_traits<T1, T2, T3, T4, T5, nat, nat, nat, nat>
       batch_traits_t;
@@ -262,11 +261,11 @@ namespace opengl_graphics
     batch_data(const batch_data &rhs);
     batch_data &operator=(batch_data rhs);
 
-    const collection1_type &get_data1() const;
-    const collection2_type &get_data2() const;
-    const collection3_type &get_data3() const;
-    const collection4_type &get_data4() const;
-    const collection5_type &get_data5() const;
+    collection1_type get_data1() const;
+    collection2_type get_data2() const;
+    collection3_type get_data3() const;
+    collection4_type get_data4() const;
+    collection5_type get_data5() const;
 
     size_t get_attribute_count() const;
     size_t get_bytecount_1() const;
@@ -288,17 +287,17 @@ namespace opengl_graphics
   {
   public:
     typedef T1 type1;
-    typedef std::unique_ptr<type1[]> collection1_type;
+    typedef shared_array<type1> collection1_type;
     typedef T2 type2;
-    typedef std::unique_ptr<type2[]> collection2_type;
+    typedef shared_array<type2> collection2_type;
     typedef T3 type3;
-    typedef std::unique_ptr<type3[]> collection3_type;
+    typedef shared_array<type3> collection3_type;
     typedef T4 type4;
-    typedef std::unique_ptr<type4[]> collection4_type;
+    typedef shared_array<type4> collection4_type;
     typedef T5 type5;
-    typedef std::unique_ptr<type5[]> collection5_type;
+    typedef shared_array<type5> collection5_type;
     typedef T6 type6;
-    typedef std::unique_ptr<type6[]> collection6_type;
+    typedef shared_array<type6> collection6_type;
 
     typedef batch_traits<T1, T2, T3, T4, T5, T6, nat, nat, nat>
       batch_traits_t;
@@ -327,12 +326,12 @@ namespace opengl_graphics
     batch_data(const batch_data &rhs);
     batch_data &operator=(batch_data rhs);
 
-    const collection1_type &get_data1() const;
-    const collection2_type &get_data2() const;
-    const collection3_type &get_data3() const;
-    const collection4_type &get_data4() const;
-    const collection5_type &get_data5() const;
-    const collection6_type &get_data6() const;
+    collection1_type get_data1() const;
+    collection2_type get_data2() const;
+    collection3_type get_data3() const;
+    collection4_type get_data4() const;
+    collection5_type get_data5() const;
+    collection6_type get_data6() const;
 
     size_t get_attribute_count() const;
     size_t get_bytecount_1() const;
@@ -355,19 +354,19 @@ namespace opengl_graphics
   {
   public:
     typedef T1 type1;
-    typedef std::unique_ptr<type1[]> collection1_type;
+    typedef shared_array<type1> collection1_type;
     typedef T2 type2;
-    typedef std::unique_ptr<type2[]> collection2_type;
+    typedef shared_array<type2> collection2_type;
     typedef T3 type3;
-    typedef std::unique_ptr<type3[]> collection3_type;
+    typedef shared_array<type3> collection3_type;
     typedef T4 type4;
-    typedef std::unique_ptr<type4[]> collection4_type;
+    typedef shared_array<type4> collection4_type;
     typedef T5 type5;
-    typedef std::unique_ptr<type5[]> collection5_type;
+    typedef shared_array<type5> collection5_type;
     typedef T6 type6;
-    typedef std::unique_ptr<type6[]> collection6_type;
+    typedef shared_array<type6> collection6_type;
     typedef T7 type7;
-    typedef std::unique_ptr<type7[]> collection7_type;
+    typedef shared_array<type7> collection7_type;
 
     typedef batch_traits<T1, T2, T3, T4, T5, T6, T7, nat, nat>
       batch_traits_t;
@@ -398,13 +397,13 @@ namespace opengl_graphics
     batch_data(const batch_data &rhs);
     batch_data &operator=(batch_data rhs);
 
-    const collection1_type &get_data1() const;
-    const collection2_type &get_data2() const;
-    const collection3_type &get_data3() const;
-    const collection4_type &get_data4() const;
-    const collection5_type &get_data5() const;
-    const collection6_type &get_data6() const;
-    const collection7_type &get_data7() const;
+    collection1_type get_data1() const;
+    collection2_type get_data2() const;
+    collection3_type get_data3() const;
+    collection4_type get_data4() const;
+    collection5_type get_data5() const;
+    collection6_type get_data6() const;
+    collection7_type get_data7() const;
 
     size_t get_attribute_count() const;
     size_t get_bytecount_1() const;
@@ -428,21 +427,21 @@ namespace opengl_graphics
   {
   public:
     typedef T1 type1;
-    typedef std::unique_ptr<type1[]> collection1_type;
+    typedef shared_array<type1> collection1_type;
     typedef T2 type2;
-    typedef std::unique_ptr<type2[]> collection2_type;
+    typedef shared_array<type2> collection2_type;
     typedef T3 type3;
-    typedef std::unique_ptr<type3[]> collection3_type;
+    typedef shared_array<type3> collection3_type;
     typedef T4 type4;
-    typedef std::unique_ptr<type4[]> collection4_type;
+    typedef shared_array<type4> collection4_type;
     typedef T5 type5;
-    typedef std::unique_ptr<type5[]> collection5_type;
+    typedef shared_array<type5> collection5_type;
     typedef T6 type6;
-    typedef std::unique_ptr<type6[]> collection6_type;
+    typedef shared_array<type6> collection6_type;
     typedef T7 type7;
-    typedef std::unique_ptr<type7[]> collection7_type;
+    typedef shared_array<type7> collection7_type;
     typedef T8 type8;
-    typedef std::unique_ptr<type8[]> collection8_type;
+    typedef shared_array<type8> collection8_type;
 
     typedef batch_traits<T1, T2, T3, T4, T5, T6, T7, T8, nat>
       batch_traits_t;
@@ -475,14 +474,14 @@ namespace opengl_graphics
     batch_data(const batch_data &rhs);
     batch_data &operator=(batch_data rhs);
 
-    const collection1_type &get_data1() const;
-    const collection2_type &get_data2() const;
-    const collection3_type &get_data3() const;
-    const collection4_type &get_data4() const;
-    const collection5_type &get_data5() const;
-    const collection6_type &get_data6() const;
-    const collection7_type &get_data7() const;
-    const collection8_type &get_data8() const;
+    collection1_type get_data1() const;
+    collection2_type get_data2() const;
+    collection3_type get_data3() const;
+    collection4_type get_data4() const;
+    collection5_type get_data5() const;
+    collection6_type get_data6() const;
+    collection7_type get_data7() const;
+    collection8_type get_data8() const;
 
     size_t get_attribute_count() const;
     size_t get_bytecount_1() const;
@@ -507,23 +506,23 @@ namespace opengl_graphics
   {
   public:
     typedef T1 type1;
-    typedef std::unique_ptr<type1[]> collection1_type;
+    typedef shared_array<type1> collection1_type;
     typedef T2 type2;
-    typedef std::unique_ptr<type2[]> collection2_type;
+    typedef shared_array<type2> collection2_type;
     typedef T3 type3;
-    typedef std::unique_ptr<type3[]> collection3_type;
+    typedef shared_array<type3> collection3_type;
     typedef T4 type4;
-    typedef std::unique_ptr<type4[]> collection4_type;
+    typedef shared_array<type4> collection4_type;
     typedef T5 type5;
-    typedef std::unique_ptr<type5[]> collection5_type;
+    typedef shared_array<type5> collection5_type;
     typedef T6 type6;
-    typedef std::unique_ptr<type6[]> collection6_type;
+    typedef shared_array<type6> collection6_type;
     typedef T7 type7;
-    typedef std::unique_ptr<type7[]> collection7_type;
+    typedef shared_array<type7> collection7_type;
     typedef T8 type8;
-    typedef std::unique_ptr<type8[]> collection8_type;
+    typedef shared_array<type8> collection8_type;
     typedef T9 type9;
-    typedef std::unique_ptr<type9[]> collection9_type;
+    typedef shared_array<type9> collection9_type;
 
     typedef batch_traits<T1, T2, T3, T4, T5, T6, T7, T8, T9>
       batch_traits_t;
@@ -558,15 +557,15 @@ namespace opengl_graphics
     batch_data(const batch_data &rhs);
     batch_data &operator=(batch_data rhs);
 
-    const collection1_type &get_data1() const;
-    const collection2_type &get_data2() const;
-    const collection3_type &get_data3() const;
-    const collection4_type &get_data4() const;
-    const collection5_type &get_data5() const;
-    const collection6_type &get_data6() const;
-    const collection7_type &get_data7() const;
-    const collection8_type &get_data8() const;
-    const collection9_type &get_data9() const;
+    collection1_type get_data1() const;
+    collection2_type get_data2() const;
+    collection3_type get_data3() const;
+    collection4_type get_data4() const;
+    collection5_type get_data5() const;
+    collection6_type get_data6() const;
+    collection7_type get_data7() const;
+    collection8_type get_data8() const;
+    collection9_type get_data9() const;
 
     size_t get_attribute_count() const;
     size_t get_bytecount_1() const;
