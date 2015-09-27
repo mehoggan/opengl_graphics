@@ -6,10 +6,13 @@ include_directories(${CMAKE_SOURCE_DIR}/../includes)
 include_directories(${CMAKE_SOURCE_DIR}/../)
 
 set(src ${CMAKE_SOURCE_DIR}/../tests/main.cpp
-  ${CMAKE_SOURCE_DIR}/../tests/test_base.h
-  ${CMAKE_SOURCE_DIR}/../tests/test_render_system.h
-  ${CMAKE_SOURCE_DIR}/../tests/test_win32_render_system.cpp)
+  ${CMAKE_SOURCE_DIR}/.././tests/test_base.h
+  ${CMAKE_SOURCE_DIR}/.././tests/test_mesh_types.cpp
+  ${CMAKE_SOURCE_DIR}/.././tests/test_mesh_types.h
+  ${CMAKE_SOURCE_DIR}/.././tests/test_ref_counted.cpp
+  ${CMAKE_SOURCE_DIR}/.././tests/test_ref_counted.h)
 
+  
 include(CheckCXXCompilerFlag)
 
 check_cxx_compiler_flag("-std=c++11" COMPILER_SUPPORTS_CXX11)
@@ -22,10 +25,10 @@ else()
   message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
 endif()
 
-add_executable(opengl_core_tests ${src})
+add_executable(opengl_graphics_tests ${src})
 
 add_definitions(-DUNICODE -D_UNICODE)
   
-target_link_libraries(opengl_core_tests opengl_core_static ${OPENGL_gl_LIBRARY})
+target_link_libraries(opengl_graphics_tests opengl_graphics_static)
 
-install(TARGETS opengl_core_tests DESTINATION bin)
+install(TARGETS opengl_graphics_tests DESTINATION bin)

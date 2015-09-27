@@ -1,39 +1,48 @@
 cmake_minimum_required(VERSION 3.0.2)
 
-project(opengl_core)
-
-find_package(OpenGL)
+project(opengl_graphics CXX)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/../tests/build ${CMAKE_CURRENT_BINARY_DIR}/tests)
 
 include_directories(${CMAKE_SOURCE_DIR}/../includes)
 include_directories(${CMAKE_SOURCE_DIR}/../)
 
-set(src ${CMAKE_SOURCE_DIR}/../declspec.h
-  ${CMAKE_SOURCE_DIR}/../src/extension_checker.cpp
-  ${CMAKE_SOURCE_DIR}/../src/win32_error_handler.cpp
-  ${CMAKE_SOURCE_DIR}/../src/win32_fb_config.cpp
-  ${CMAKE_SOURCE_DIR}/../src/win32_gl_functions.cpp
-  ${CMAKE_SOURCE_DIR}/../src/win32_hinstance.cpp
-  ${CMAKE_SOURCE_DIR}/../src/win32_render_context.cpp
-  ${CMAKE_SOURCE_DIR}/../src/win32_render_system.cpp
-  ${CMAKE_SOURCE_DIR}/../src/win32_render_window.cpp
-  ${CMAKE_SOURCE_DIR}/../src/win32_symbol_loader.cpp
-  ${CMAKE_SOURCE_DIR}/../src/win32_wndproc.cpp
-  ${CMAKE_SOURCE_DIR}/../includes/core/concurrent_queue.h
-  ${CMAKE_SOURCE_DIR}/../includes/core/extension_checker.h
-  ${CMAKE_SOURCE_DIR}/../includes/core/fb_config.h
-  ${CMAKE_SOURCE_DIR}/../includes/core/gl_functions.h
+set(src ${CMAKE_SOURCE_DIR}/../src/dummy.cpp
+  ${CMAKE_SOURCE_DIR}/../declspec.h
   ${CMAKE_SOURCE_DIR}/../includes/core/memory_leaks.h
-  ${CMAKE_SOURCE_DIR}/../includes/core/non_copyable.h
   ${CMAKE_SOURCE_DIR}/../includes/core/platform.h
-  ${CMAKE_SOURCE_DIR}/../includes/core/render_context.h
-  ${CMAKE_SOURCE_DIR}/../includes/core/render_system.h
-  ${CMAKE_SOURCE_DIR}/../includes/core/render_window.h
-  ${CMAKE_SOURCE_DIR}/../includes/core/symbol_loader.h
-  ${CMAKE_SOURCE_DIR}/../includes/core/win32_error_handler.h
-  ${CMAKE_SOURCE_DIR}/../includes/core/win32_hinstance.h
-  ${CMAKE_SOURCE_DIR}/../includes/core/win32_wndproc.h)
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/batch_data.h
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/batch_data.inl
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/batch_traits.h
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/datums/interleaved_datum_2d.h
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/datums/interleaved_datum_2d.inl
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/datums/interleaved_datum_3d.h
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/datums/interleaved_datum_3d.inl
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/datums/interleaved_datum_4d.h
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/datums/interleaved_datum_4d.inl
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/datums/interleaved_datum_5d.h
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/datums/interleaved_datum_5d.inl
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/datums/interleaved_datum_6d.h
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/datums/interleaved_datum_6d.inl
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/datums/interleaved_datum_7d.h
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/datums/interleaved_datum_7d.inl
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/datums/interleaved_datum_8d.h
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/datums/interleaved_datum_8d.inl
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/datums/interleaved_datum_9d.h
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/datums/interleaved_datum_9d.inl
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/interleaved_data.h
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/interleaved_data.inl
+  ${CMAKE_SOURCE_DIR}/../includes/mesh_types/interleaved_traits.h
+  ${CMAKE_SOURCE_DIR}/../includes/ref_count/intrusive_ptr/intrusive_ptr.h
+  ${CMAKE_SOURCE_DIR}/../includes/ref_count/intrusive_ptr/ref_counted_base.h
+  ${CMAKE_SOURCE_DIR}/../includes/ref_count/shared_array/shared_array.h
+  ${CMAKE_SOURCE_DIR}/../includes/ref_count/shared_array/shared_count.h
+  ${CMAKE_SOURCE_DIR}/../includes/ref_count/utils/non_copyable.h
+  ${CMAKE_SOURCE_DIR}/../includes/ref_count/utils/sp_counted_base.h
+  ${CMAKE_SOURCE_DIR}/../includes/type_traits/dimension.h
+  ${CMAKE_SOURCE_DIR}/../includes/type_traits/sizeof.h
+  ${CMAKE_SOURCE_DIR}/../includes/utils/non_copyable.h
+  ${CMAKE_SOURCE_DIR}/../includes/utils/utils.h)
 
 include(CheckCXXCompilerFlag)
 
@@ -47,16 +56,13 @@ else()
   message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
 endif()
 
-add_library(opengl_core_static STATIC ${src})
-add_library(opengl_core_shared SHARED ${src})
-
-target_link_libraries(opengl_core_static ${OPENGL_gl_LIBRARY})
-target_link_libraries(opengl_core_shared ${OPENGL_gl_LIBRARY})
+add_library(opengl_graphics_static STATIC ${src})
+add_library(opengl_graphics_shared SHARED ${src})
 
 add_definitions(-DUNICODE -D_UNICODE)
 
-set_target_properties(opengl_core_static PROPERTIES COMPILE_DEFINITIONS _USRSTATIC)
-target_compile_definitions(opengl_core_shared PRIVATE _USRSHARED OPENGL_CORE_EXPORTS)
+set_target_properties(opengl_graphics_static PROPERTIES COMPILE_DEFINITIONS _USRSTATIC)
+target_compile_definitions(opengl_graphics_shared PRIVATE _USRSHARED OPENGL_CORE_EXPORTS)
 
 enable_testing()
-add_test(NAME tests COMMAND core_tests)
+add_test(NAME tests COMMAND graphics_tests)
