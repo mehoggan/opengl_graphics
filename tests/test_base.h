@@ -8,7 +8,7 @@
 #include <cassert>
 #include <iostream>
 
-#if __OPENGL_CORE_WINDOWS__
+#if __OPENGL_GRAPHICS_WINDOWS__
 #define OPENGL_GRAPHICS_ASSERT_EQ(lhs, rhs) \
   if (!((lhs) == (rhs))) { \
     char buff[1024]; \

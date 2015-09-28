@@ -6,11 +6,11 @@ include_directories(${CMAKE_SOURCE_DIR}/../includes)
 include_directories(${CMAKE_SOURCE_DIR}/../)
 
 set(src ${CMAKE_SOURCE_DIR}/../tests/main.cpp
-  ${CMAKE_SOURCE_DIR}/.././tests/test_base.h
-  ${CMAKE_SOURCE_DIR}/.././tests/test_mesh_types.cpp
-  ${CMAKE_SOURCE_DIR}/.././tests/test_mesh_types.h
-  ${CMAKE_SOURCE_DIR}/.././tests/test_ref_counted.cpp
-  ${CMAKE_SOURCE_DIR}/.././tests/test_ref_counted.h)
+  ${CMAKE_SOURCE_DIR}/../tests/test_base.h
+  ${CMAKE_SOURCE_DIR}/../tests/test_mesh_types.cpp
+  ${CMAKE_SOURCE_DIR}/../tests/test_mesh_types.h
+  ${CMAKE_SOURCE_DIR}/../tests/test_ref_counted.cpp
+  ${CMAKE_SOURCE_DIR}/../tests/test_ref_counted.h)
 
   
 include(CheckCXXCompilerFlag)

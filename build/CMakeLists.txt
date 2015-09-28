@@ -61,8 +61,5 @@ add_library(opengl_graphics_shared SHARED ${src})
 
 add_definitions(-DUNICODE -D_UNICODE)
 
-set_target_properties(opengl_graphics_static PROPERTIES COMPILE_DEFINITIONS _USRSTATIC)
-target_compile_definitions(opengl_graphics_shared PRIVATE _USRSHARED OPENGL_CORE_EXPORTS)
-
 enable_testing()
 add_test(NAME tests COMMAND graphics_tests)
