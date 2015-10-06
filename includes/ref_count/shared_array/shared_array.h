@@ -1,4 +1,4 @@
-/* Copyright (C)
+﻿/* Copyright (C)
  *
  * Copyright 2013 Matthew Everett Hoggan
  *
@@ -68,7 +68,7 @@ namespace opengl_graphics
       _px(p),
       _pn(p, checked_array_deleter())
     {
-      static_assert(std::is_convertible<Y[], T[]>::value,
+      static_assert(std::is_convertible<Y*, T*>::value,
         "Types are not convertible");
     }
 
@@ -111,7 +111,7 @@ namespace opengl_graphics
     template<class Y>
     shared_array & operator=(const shared_array<Y> &r)
     {
-      static_assert(std::is_convertible<Y[], T[]>::value,
+      static_assert(std::is_convertible<Y*, T*>::value,
         "Types are not convertible");
 
       this_type(r).swap(*this);
@@ -131,7 +131,7 @@ namespace opengl_graphics
     template<class Y>
     void reset(Y *p)
     {
-      static_assert(std::is_convertible<Y[], T[]>::value,
+      static_assert(std::is_convertible<Y*, T*>::value,
         "Types are not convertible");
 
       assert(p == 0 || p != _px );

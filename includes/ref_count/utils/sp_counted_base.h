@@ -1,4 +1,4 @@
-/* Copyright (C)
+﻿/* Copyright (C)
  *
  * Copyright 2013 Matthew Everett Hoggan
  *
@@ -81,7 +81,7 @@ namespace opengl_graphics
     bool add_ref_lock()
     {
       for (;;) {
-        long tmp = static_cast<long const volatile &>(_use_count);
+        long tmp = _use_count;
         if (tmp == 0) {
           return false;
         }
