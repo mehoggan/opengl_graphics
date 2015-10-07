@@ -1,4 +1,4 @@
-/* Copyright (C)
+﻿/* Copyright (C)
  *
  * Copyright 2013 Matthew Everett Hoggan
  *
@@ -19,6 +19,8 @@
 #define SHARED_COUNT_HPP_INCLUDED
 
 #include "ref_count/utils/sp_counted_base.h"
+
+#include <functional>
 
 namespace opengl_graphics
 {
