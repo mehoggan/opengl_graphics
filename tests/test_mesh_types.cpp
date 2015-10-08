@@ -4587,6 +4587,42 @@ void test_interleaved_data_assignment_operator()
   }
 }
 
+void test_indices()
+{
+  {
+    opengl_graphics::indices<uint16_t> indices;
+    OPENGL_GRAPHICS_ASSERT(!indices.get_data().get());
+  }
+
+  {
+    opengl_graphics::indices<uint16_t>::collection_type data(
+      new uint16_t[12]);
+    opengl_graphics::indices<uint16_t> indices(data, 12);
+    OPENGL_GRAPHICS_ASSERT(indices.get_data().get());
+    OPENGL_GRAPHICS_ASSERT_EQ(12, indices.get_indices_count());
+    OPENGL_GRAPHICS_ASSERT_EQ(12 * sizeof(uint16_t), indices.get_byte_count());
+  }
+
+  {
+    opengl_graphics::indices<uint16_t>::collection_type data(
+      new uint16_t[12]);
+    opengl_graphics::indices<uint16_t> indices(data, 12);
+    opengl_graphics::indices<uint16_t> indices_cpy(indices);
+    OPENGL_GRAPHICS_ASSERT_EQ(indices, indices_cpy);
+    OPENGL_GRAPHICS_ASSERT(!(indices != indices_cpy));
+  }
+
+  {
+    opengl_graphics::indices<uint16_t>::collection_type data(
+      new uint16_t[12]);
+    opengl_graphics::indices<uint16_t> indices(data, 12);
+    opengl_graphics::indices<uint16_t> indices_cpy;
+    indices_cpy = indices;
+    OPENGL_GRAPHICS_ASSERT_EQ(indices, indices_cpy);
+    OPENGL_GRAPHICS_ASSERT(!(indices != indices_cpy));
+  }
+}
+
 bool test_mesh_types::run()
 {
   test_default_interleaved_datum_2d_constructor();
@@ -4630,5 +4666,7 @@ bool test_mesh_types::run()
   test_interleaved_data_ctor();
   test_interleaved_data_copy_ctor();
   test_interleaved_data_assignment_operator();
+  test_indices();
+
   return true;
 }

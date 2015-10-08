@@ -82,8 +82,7 @@ subdir = .
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/configure $(am__configure_deps) \
 	$(srcdir)/config.h.in AUTHORS ChangeLog NEWS README ar-lib \
-	compile config.guess config.sub depcomp install-sh missing \
-	ltmain.sh
+	compile config.guess config.sub install-sh missing ltmain.sh
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/libtool.m4 \
 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
@@ -223,13 +222,13 @@ AUTOHEADER = ${SHELL} /home/mhoggan/Devel/ArmyBalancer/opengl_graphics/build/mis
 AUTOMAKE = ${SHELL} /home/mhoggan/Devel/ArmyBalancer/opengl_graphics/build/missing automake-1.14
 AWK = gawk
 CC = gcc
-CCDEPMODE = depmode=gcc3
+CCDEPMODE = depmode=none
 CFLAGS = -g -O2
 CPP = gcc -E
 CPPFLAGS = -DDEBUG
 CXX = g++
 CXXCPP = g++ -E
-CXXDEPMODE = depmode=gcc3
+CXXDEPMODE = depmode=none
 CXXFLAGS = -g -O0 -std=gnu++11
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H

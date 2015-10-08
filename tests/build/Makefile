@@ -102,7 +102,7 @@ am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__dirstamp = $(am__leading_dot)dirstamp
 am_test_opengl_graphics_OBJECTS = ../main.$(OBJEXT) \
-	../test_mesh_types.$(OBJEXT)
+	../test_mesh_types.$(OBJEXT) ../test_ref_counted.$(OBJEXT)
 test_opengl_graphics_OBJECTS = $(am_test_opengl_graphics_OBJECTS)
 test_opengl_graphics_LDADD = $(LDADD)
 AM_V_lt = $(am__v_lt_$(V))
@@ -318,7 +318,8 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
 AM_CXXFLAGS = -std=gnu++11
 test_opengl_graphics_SOURCES = \
 	../main.cpp \
-	../test_mesh_types.cpp
+	../test_mesh_types.cpp \
+	../test_ref_counted.cpp
 
 test_opengl_graphics_LDFLAGS = -no-install \
 	-L$(abs_top_builddir)/../../build/.libs
@@ -435,6 +436,8 @@ clean-binPROGRAMS:
 ../main.$(OBJEXT): ../$(am__dirstamp) ../$(DEPDIR)/$(am__dirstamp)
 ../test_mesh_types.$(OBJEXT): ../$(am__dirstamp) \
 	../$(DEPDIR)/$(am__dirstamp)
+../test_ref_counted.$(OBJEXT): ../$(am__dirstamp) \
+	../$(DEPDIR)/$(am__dirstamp)
 
 test_opengl_graphics$(EXEEXT): $(test_opengl_graphics_OBJECTS) $(test_opengl_graphics_DEPENDENCIES) $(EXTRA_test_opengl_graphics_DEPENDENCIES) 
 	@rm -f test_opengl_graphics$(EXEEXT)
@@ -449,6 +452,7 @@ distclean-compile:
 
 include ../$(DEPDIR)/main.Po
 include ../$(DEPDIR)/test_mesh_types.Po
+include ../$(DEPDIR)/test_ref_counted.Po
 
 .cpp.o:
 	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\

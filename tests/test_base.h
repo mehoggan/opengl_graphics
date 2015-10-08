@@ -35,6 +35,7 @@
   if (!((lhs) == (rhs))) { \
     std::cout << "Failure on " << __LINE__ << " in " << __FILE__ << " in " \
       << __FUNCTION__ << std::endl; \
+  } \
   assert(((lhs) == (rhs)));
 
 #define OPENGL_GRAPHICS_ASSERT(expression) \
@@ -48,7 +49,7 @@
 class test_base
 {
 public:
-  ~test_base()
+  virtual ~test_base()
   {}
 
   virtual bool run() = 0;

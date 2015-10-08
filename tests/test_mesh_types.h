@@ -15,6 +15,7 @@
 #include "mesh_types/datums/interleaved_datum_9d.h"
 #include "mesh_types/interleaved_data.h"
 #include "mesh_types/batch_data.h"
+#include "mesh_types/indices.h"
 
 #include <math.h>
 

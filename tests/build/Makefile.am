@@ -6,7 +6,8 @@ AM_CXXFLAGS = -std=gnu++11
 
 test_opengl_graphics_SOURCES = \
 	../main.cpp \
-	../test_mesh_types.cpp
+	../test_mesh_types.cpp \
+	../test_ref_counted.cpp
 
 test_opengl_graphics_LDFLAGS = -no-install \
 	-L$(abs_top_builddir)/../../build/.libs

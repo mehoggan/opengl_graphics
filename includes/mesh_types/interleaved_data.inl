@@ -53,7 +53,7 @@ namespace opengl_graphics // 2 attributes
     T1, T2, nat, nat, nat, nat, nat, nat, nat, nat
   >::interleaved_data(
     const interleaved_data<T1, T2> &rhs) :
-    _data(std::move(rhs._data)),
+    _data(rhs._data),
     _attribute_count(rhs._attribute_count)
   {}
 

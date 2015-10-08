@@ -20,6 +20,8 @@
 
 #include "utils/utils.h"
 
+#include <cstdint>
+
 namespace opengl_graphics
 {
   template
@@ -30,10 +32,7 @@ namespace opengl_graphics
   >
   struct batch_traits
   {
-    enum traits
-    {
-      stride = 0u
-    };
+    static const std::uint32_t stride = 0u;
   };
 }
 
