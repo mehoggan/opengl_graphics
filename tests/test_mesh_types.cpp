@@ -4587,6 +4587,185 @@ void test_interleaved_data_assignment_operator()
   }
 }
 
+void test_batch_interleaved_is_interleaved_trait()
+{
+  bool is_interleaved = false;
+
+  is_interleaved = opengl_graphics::interleaved_data
+  <
+    internal::pod_2<int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_4<int, int, int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_4<int, int, int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_4<int, int, int, int>,
+    internal::pod_2<int, int>
+  >::is_interleaved;
+  OPENGL_GRAPHICS_ASSERT(is_interleaved);
+
+  is_interleaved = opengl_graphics::interleaved_data
+  <
+    internal::pod_2<int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_4<int, int, int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_4<int, int, int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_4<int, int, int, int>
+  >::is_interleaved;
+  OPENGL_GRAPHICS_ASSERT(is_interleaved);
+
+  is_interleaved = opengl_graphics::interleaved_data
+  <
+    internal::pod_2<int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_4<int, int, int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_4<int, int, int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_4<int, int, int, int>
+  >::is_interleaved;
+  OPENGL_GRAPHICS_ASSERT(is_interleaved);
+
+  is_interleaved = opengl_graphics::interleaved_data
+  <
+    internal::pod_2<int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_4<int, int, int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_4<int, int, int, int>
+  >::is_interleaved;
+  OPENGL_GRAPHICS_ASSERT(is_interleaved);
+
+  is_interleaved = opengl_graphics::interleaved_data
+  <
+    internal::pod_2<int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_4<int, int, int, int>
+  >::is_interleaved;
+  OPENGL_GRAPHICS_ASSERT(is_interleaved);
+
+  is_interleaved = opengl_graphics::interleaved_data
+  <
+    internal::pod_2<int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_4<int, int, int, int>
+  >::is_interleaved;
+  OPENGL_GRAPHICS_ASSERT(is_interleaved);
+
+  is_interleaved = opengl_graphics::interleaved_data
+  <
+    internal::pod_2<int, int>,
+    internal::pod_3<int, int, int>,
+    internal::pod_4<int, int, int, int>
+  >::is_interleaved;
+  OPENGL_GRAPHICS_ASSERT(is_interleaved);
+
+  is_interleaved = opengl_graphics::interleaved_data
+  <
+    internal::pod_2<int, int>,
+    internal::pod_3<int, int, int>
+  >::is_interleaved;
+  OPENGL_GRAPHICS_ASSERT(is_interleaved);
+
+  is_interleaved = opengl_graphics::batch_data
+  <
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>
+  >::is_interleaved;
+  OPENGL_GRAPHICS_ASSERT(!is_interleaved);
+
+  is_interleaved = opengl_graphics::batch_data
+  <
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>
+  >::is_interleaved;
+  OPENGL_GRAPHICS_ASSERT(!is_interleaved);
+
+  is_interleaved = opengl_graphics::batch_data
+  <
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>
+  >::is_interleaved;
+  OPENGL_GRAPHICS_ASSERT(!is_interleaved);
+
+  is_interleaved = opengl_graphics::batch_data
+  <
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>
+  >::is_interleaved;
+  OPENGL_GRAPHICS_ASSERT(!is_interleaved);
+
+  is_interleaved = opengl_graphics::batch_data
+  <
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>
+  >::is_interleaved;
+  OPENGL_GRAPHICS_ASSERT(!is_interleaved);
+
+  is_interleaved = opengl_graphics::batch_data
+  <
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>
+  >::is_interleaved;
+  OPENGL_GRAPHICS_ASSERT(!is_interleaved);
+
+  is_interleaved = opengl_graphics::batch_data
+  <
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>
+  >::is_interleaved;
+  OPENGL_GRAPHICS_ASSERT(!is_interleaved);
+
+  is_interleaved = opengl_graphics::batch_data
+  <
+    internal::pod_2<int, int>,
+    internal::pod_2<int, int>
+  >::is_interleaved;
+  OPENGL_GRAPHICS_ASSERT(!is_interleaved);
+
+  is_interleaved = opengl_graphics::batch_data
+  <
+    internal::pod_2<int, int>
+  >::is_interleaved;
+  OPENGL_GRAPHICS_ASSERT(!is_interleaved);
+}
+
 void test_indices()
 {
   {
@@ -4666,6 +4845,7 @@ bool test_mesh_types::run()
   test_interleaved_data_ctor();
   test_interleaved_data_copy_ctor();
   test_interleaved_data_assignment_operator();
+  test_batch_interleaved_is_interleaved_trait();
   test_indices();
 
   return true;

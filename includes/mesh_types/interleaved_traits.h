@@ -22,18 +22,20 @@
 #include "type_traits/sizeof.h"
 #include "utils/utils.h"
 
+#include <cstdint>
+
 namespace opengl_graphics
 {
   template<typename T>
   struct attribute_dimension
   {
-    static const size_t value = msvc_typename T::dimension;
+    static const std::size_t value = msvc_typename T::dimension;
   };
 
   template<>
   struct attribute_dimension<nat>
   {
-    static const size_t value = 0;
+    static const std::size_t value = 0;
   };
 
   template

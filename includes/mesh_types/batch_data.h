@@ -50,6 +50,7 @@ namespace opengl_graphics
     <
       T1, nat, nat, nat, nat, nat, nat, nat, nat
     > batch_traits_t;
+    static const bool is_interleaved = false;
 
   private:
     collection1_type _data1;
@@ -87,6 +88,7 @@ namespace opengl_graphics
 
     typedef batch_traits<T1, T2, nat, nat, nat, nat, nat, nat, nat>
       batch_traits_t;
+    static const bool is_interleaved = false;
 
   private:
     collection1_type _data1;
@@ -130,6 +132,7 @@ namespace opengl_graphics
 
     typedef batch_traits<T1, T2, T3, nat, nat, nat, nat, nat, nat>
       batch_traits_t;
+    static const bool is_interleaved = false;
 
   private:
     collection1_type _data1;
@@ -179,6 +182,7 @@ namespace opengl_graphics
 
     typedef batch_traits<T1, T2, T3, T4, nat, nat, nat, nat, nat>
       batch_traits_t;
+    static const bool is_interleaved = false;
 
   private:
     collection1_type _data1;
@@ -234,6 +238,7 @@ namespace opengl_graphics
 
     typedef batch_traits<T1, T2, T3, T4, T5, nat, nat, nat, nat>
       batch_traits_t;
+    static const bool is_interleaved = false;
 
   private:
     collection1_type _data1;
@@ -296,6 +301,7 @@ namespace opengl_graphics
 
     typedef batch_traits<T1, T2, T3, T4, T5, T6, nat, nat, nat>
       batch_traits_t;
+    static const bool is_interleaved = false;
 
   private:
     collection1_type _data1;
@@ -364,6 +370,7 @@ namespace opengl_graphics
 
     typedef batch_traits<T1, T2, T3, T4, T5, T6, T7, nat, nat>
       batch_traits_t;
+    static const bool is_interleaved = false;
 
   private:
     collection1_type _data1;
@@ -438,6 +445,7 @@ namespace opengl_graphics
 
     typedef batch_traits<T1, T2, T3, T4, T5, T6, T7, T8, nat>
       batch_traits_t;
+    static const bool is_interleaved = false;
 
   private:
     collection1_type _data1;
@@ -518,6 +526,7 @@ namespace opengl_graphics
 
     typedef batch_traits<T1, T2, T3, T4, T5, T6, T7, T8, T9>
       batch_traits_t;
+    static const bool is_interleaved = false;
 
   private:
     collection1_type _data1;

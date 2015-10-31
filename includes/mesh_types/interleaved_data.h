@@ -58,6 +58,7 @@ namespace opengl_graphics // 2 attributes
     <
       T1, T2, nat, nat, nat, nat, nat, nat, nat
     > traits;
+    static const bool is_interleaved = true;
 
   private:
     collection_type _data;
@@ -93,6 +94,7 @@ namespace opengl_graphics // 3 attributes
     <
       T1, T2, T3, nat, nat, nat, nat, nat, nat
     > traits;
+    static const bool is_interleaved = true;
 
   private:
     collection_type _data;
@@ -128,6 +130,7 @@ namespace opengl_graphics // 4 attributes
     <
       T1, T2, T3, T4, nat, nat, nat, nat, nat
     > traits;
+    static const bool is_interleaved = true;
 
   private:
     collection_type _data;
@@ -163,6 +166,7 @@ namespace opengl_graphics // 5 attributes
     <
       T1, T2, T3, T4, T5, nat, nat, nat, nat
     > traits;
+    static const bool is_interleaved = true;
 
   private:
     collection_type _data;
@@ -199,6 +203,7 @@ namespace opengl_graphics // 6 attributes
     <
       T1, T2, T3, T4, T5, T6, nat, nat, nat
     > traits;
+    static const bool is_interleaved = true;
 
   private:
     collection_type _data;
@@ -235,6 +240,7 @@ namespace opengl_graphics // 7 attributes
     <
       T1, T2, T3, T4, T5, T6, T7, nat, nat
     > traits;
+    static const bool is_interleaved = true;
 
   private:
     collection_type _data;
@@ -271,6 +277,7 @@ namespace opengl_graphics // 8 attributes
     <
       T1, T2, T3, T4, T5, T6, T7, T8, nat
     > traits;
+    static const bool is_interleaved = true;
 
   private:
     collection_type _data;
@@ -307,6 +314,7 @@ namespace opengl_graphics // 9 attributes
     <
       T1, T2, T3, T4, T5, T6, T7, T8, T9
     > traits;
+    static const bool is_interleaved = true;
 
   private:
     collection_type _data;
