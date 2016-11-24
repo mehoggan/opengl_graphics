@@ -107,7 +107,11 @@ Makefile
 *.trs
 *.log
 config.h
-m4/
 test-driver
 tests/check_mesh_types
 tests/check_ref_counted
+libtool.m4
+ltoptions.m4
+ltsugar.m4
+ltversion.m4
+lt~obsolete.m4
