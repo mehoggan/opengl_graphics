@@ -1,0 +1,5 @@
+add_subdirectory(core)
+add_subdirectory(mesh_types)
+add_subdirectory(ref_count)
+add_subdirectory(type_traits)
+add_subdirectory(utils)
