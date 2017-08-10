@@ -1,7 +1,7 @@
 #ifndef GRAPHICS_MEMORY_LEAKS_H_INCLUDED
 #define GRAPHICS_MEMORY_LEAKS_H_INCLUDED
 
-#include "core/platform.h"
+#include "opengl_graphics/core/platform.h"
 
 #ifdef __OPENGL_GRAPHICS_WINDOWS__
   #define _CRTDBG_MAP_ALLOC
