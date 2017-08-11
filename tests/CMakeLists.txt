@@ -11,7 +11,7 @@ foreach(unit_test ${unit_tests})
     check_${unit_test}.cpp
     suite.cpp
   )
-  target_link_libraries("check_${unit_test}" ${LIBS})
+  target_link_libraries("check_${unit_test}" ${LIBS} pthread)
   add_test("check_${unit_test}" "${CMAKE_CURRENT_BINARY_DIR}/${unit_test}/")
 
   if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
